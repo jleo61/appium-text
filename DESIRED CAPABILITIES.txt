@@ -1,0 +1,58 @@
+{
+    "platformName": "Android",
+    "platformVersion": "9",
+    "deviceName": "Emulator",
+    "automationName": "XCUITest",
+    "app": "/path/to/my.app"
+}
+
+
+
+
+windows
+adb shell dumpsys window | find "mCurrentFocus"
+
+
+
+
+
+
+mac linux
+adb shell dumpsys window | grep -E 'mCurrentFocus' 
+
+
+
+{
+  "platformName": "Android",
+  "platformVersion": "11",
+  "deviceName": "A",
+  "automationName": UiAutomator",
+  "appPackage": "com.android.contacts",
+  "appActivity": "com.android.contacts.activities.PeopleActivity"
+}
+
+
+
+
+from appium import webdriver
+from selenium.webdriver.common.by import By
+
+
+
+desired_caps = {
+  "platformName": "Android",
+  "platformVersion": "11",
+  "deviceName": "A",
+  "automationName": "UiAutomator2",
+  "appPackage": "com.whatsapp",
+  "appActivity": "com.whatsapp.HomeActivity",
+   "app": "C:\\Users\\matne.LAPTOP-T1PULM73\\Downloads\\WhatsApp Messenger_2.23.17.14_Apkpure.apk"
+}
+
+driver = webdriver.Remote("http://localhost:4723/wd/hub", desired_caps)
+
+
+j = driver.find_element(By.XPATH, "/get.FrameLget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout")
+
+
+j.click()
